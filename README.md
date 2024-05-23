@@ -127,45 +127,47 @@
 
 <h3>✨ Django</h3>
 
-- 제목과 범주주만 입력한 다음 자동완성 버튼을 누르면 데이터 베이스 내의 모든 커뮤니티 게시글을 확인하고 유사도 검사를 진행한 다음, 가장 유사도가 높은 제목의 내용을 화면상으로 나타내는 것이 목표입니다.
+- 제목과 범주주만 입력한 다음 자동완성 버튼을 누르면 데이터 베이스 내의 모든 커뮤니티 게시글을 확인하고<br>
+  유사도 검사를 진행한 다음, 가장 유사도가 높은 제목의 내용을 화면상으로 나타내는 것이 목표입니다.
 - 위 목표를 위해 수정할 파일들은 다음과 같습니다.
   
-  1. HTML, CSS
-  2. JS
-  3. View
+1. HTML, CSS
+1. JS
+1. View
 
 
-<h4>🥕 HTML, CSS</h4>
+<h4>✨ HTML, CSS</h4>
 
 - 화면상에서 자동완성 버튼을 눌렀을 때, View를 통해 가장 유사도가 높은 3개의 내용을 추천하는 Div 태그를 새로 만들었습니다.
 - 비동기 방식으로 내용을 불러오는 동안 Loading 하는 이미지도 포함하였습니다.
 - 내용을 수정하지 않으면 저장하기 버튼을 비활성화해서 내용을 수정하게끔 했습니다.
 - CSS 파일은 따로 표기하지 않았습니다.
+- <details><summary> 화면 확인</summary>
+    <br>
+    <img width="600" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/cf5feeb7-f4a6-4b2a-9e25-383797c16b8b">
+    <br>
+  
+    - 표기한 부분에 제목을 입력하고 해당되는 범주를 고른 다음 오른쪽의 ai 자동추천 버튼을 누릅니다.
 
-<details><summary>👉 화면 확인</summary>
-<br>
-<img width="600" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/cf5feeb7-f4a6-4b2a-9e25-383797c16b8b">
+    <br>
+    <img width="600" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/fee5aefc-a1ec-41e2-b9b2-d60aecb6e4ac">
+    <br>
+    
+    - 유사도가 가장 높은 내용 중 상위 3개의 내용을 표현합니다.
+    - 이 중 하나를 선택합니다.
 
-- 표기한 부분에 제목을 입력하고 해당되는 범주를 고른 다음 오른쪽의 ai 자동추천 버튼을 누릅니다.
-
-<img width="600" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/fee5aefc-a1ec-41e2-b9b2-d60aecb6e4ac">
-
-- 유사도가 가장 높은 내용 중 상위 3개의 내용을 표현합니다.
-- 이 중 하나를 선택합니다.
-
-<img width="600" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/e34ec4ae-a084-4ef7-a8c3-539ed7d0c2b2">
-
-- 선택한 내용이 게시글 작성 부분으로 들어갑니다.
-- 이 때, 내용을 수정하지 않으면 저장되지 않도록 저장버튼을 비활성화합니다.
-</details>
-
----
-
-<details><summary>👉 코드 확인</summary>
-<br>
-  <img width="600" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/49600bc6-da17-489b-b752-7ec9cfef8474">
-  <img width="600" alt="html2" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/35a37548-b074-4dd0-adac-999c431227df">
-</details>
+    <br>
+    <img width="600" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/e34ec4ae-a084-4ef7-a8c3-539ed7d0c2b2">
+    <br>
+    
+    - 선택한 내용이 게시글 작성 부분으로 들어갑니다.
+    - 이 때, 내용을 수정하지 않으면 저장되지 않도록 저장버튼을 비활성화합니다.
+  </details>
+- <details><summary> 코드 확인</summary>
+    <br>
+    <img width="600" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/49600bc6-da17-489b-b752-7ec9cfef8474">
+    <img width="600" alt="html2" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/35a37548-b074-4dd0-adac-999c431227df">
+  </details>
 
 <h4>🥕 JS</h4>
 
