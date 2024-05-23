@@ -13,7 +13,7 @@
 - 화면
 - 데이터 수집(Data Crowling)
 - Cosine_Similarity 이용하여 유사도 분석
-- Django
+- Django로 구현
 - 서버 배포 및 화면 시연
 - Trouble-Shooting
 - 느낀점
@@ -125,7 +125,7 @@
 
 ---
 
-<h3>✨ Django</h3>
+<h3>✨ Django로 구현</h3>
 
 - 제목과 범주주만 입력한 다음 자동완성 버튼을 누르면 데이터 베이스 내의 모든 커뮤니티 게시글을 확인하고<br>
   유사도 검사를 진행한 다음, 가장 유사도가 높은 제목의 내용을 화면상으로 나타내는 것이 목표입니다.
@@ -169,19 +169,20 @@
     <img width="600" alt="html2" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/35a37548-b074-4dd0-adac-999c431227df">
   </details>
 
-<h4>🥕 JS</h4>
+<h4>✨ JS</h4>
 
 - 내용 추천 버튼을 눌렀을 때 view로 보내기 위해 비동기 방식을 이용하여 JavaScript를 구성했습니다. 
-> 상세 설명은 주석을 통해 확인하실 수 있습니다.
 
-<details><summary>👉 코드 확인</summary>
-<br>
-  <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/eceb48bd-980d-4be0-8f83-ab598fa2c431">
-  <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/f80d5beb-34e1-40ee-86e4-02a07ed9eb28">
-  <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/18c27fbe-cdd2-4b3d-b82b-ea8ddc27f1b9">
-</details>
+  > 상세 설명은 주석을 통해 확인하실 수 있습니다.
 
-<h4>🥕 Django</h4>
+- <details><summary> 코드 확인</summary>
+    <br>
+    <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/eceb48bd-980d-4be0-8f83-ab598fa2c431">
+    <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/f80d5beb-34e1-40ee-86e4-02a07ed9eb28">
+    <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/18c27fbe-cdd2-4b3d-b82b-ea8ddc27f1b9">
+  </details>
+
+<h4>✨ Django</h4>
 
 - JavaScript로 비동기통신 방식을 이용하기 위해 view 와 url을 작성하였습니다.
 - 앞선 JupyterNotebook으로 작성한 코드를 View에 모듈화하였습니다.
@@ -193,9 +194,10 @@
   - 제목과 범주를 title과 radio_active 라는 변수에 할당합니다.
   - radio_active는 수치형이기에 translate_status 함수를 통해 범주이름으로 변경합니다.
   - 제목과 범주를 하나의 문자열로 만들어주고 get_similar_communities 함수를 호출합니다.
-  - <details><summary>👉 코드 보기</summary>
-    <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/f341703e-905a-450c-9c10-416fa3a28638">
-  </details>
+  - <details><summary> 코드 보기</summary>
+      <br>
+      <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/f341703e-905a-450c-9c10-416fa3a28638">
+    </details>
 
     
 - get_similar_communities
@@ -209,7 +211,8 @@
   - 할당된 similar_community를 다시 유사도가 높은 순서로 정렬하여 similar_community_sorted라는 변수에 할당합니다.
   - 유사도가 가장 높은 3개를 추출합니다.
   - 이때, 기존의 데이터프레임에 유사도가 가장 높은 상위 3개의 인덱스를 참조하여 similar_content라는 리스트에 append하여 return 해줍니다.
-  - <details><summary>👉 코드 보기</summary>
+  - <details><summary> 코드 보기</summary>
+      <br>
       <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/8a40cacb-6fc9-498a-b436-e901c9ddd475">
     </details>
 
@@ -217,7 +220,8 @@
 - AIView
   - 다시 AIView로 돌아와서 get_similar_communities 함수로 return 된 similar_content를 similar_communities라는 변수에 할당해줍니다.
   - JsonResponse를 통해 similar_communities를 return하고 비동기통신을 종료합니다.
-  - <details><summary>👉 코드 보기</summary>
+  - <details><summary> 코드 보기</summary>
+      <br>
       <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/009b8d77-f6ec-4f35-94e1-0b10ed6dcc9f">
     </details>
 
@@ -226,25 +230,27 @@
   - post_status가 수치형이기 때문에 translate_status 함수로 문자로 변환해줍니다.
   - combined_features 라는 새로운 feature로 concatenate 라는 함수를 통해 하나의 문자열로 만들어줍니다.
   - 그 데이터프레임을 return으로 반환합니다.
-  - <details><summary>👉 코드 보기</summary>
+  - <details><summary> 코드 보기</summary>
+      <br>
       <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/b8d2379d-2572-4247-bc75-cd53fcfaebe9">
     </details>
 
 - translate_status & concatenate
   - 수치형인 범주값을 문자로 변환해주는 함수와 하나의 문자열로 만들어주는 함수입니다.
-  - <details><summary>👉 코드 보기</summary>
+  - <details><summary> 코드 보기</summary>
+      <br>
       <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/233658ce-adeb-4059-8b2e-55c526552835">
     </details>
 
 ---
 
-<h3>🥕 서버 배포 및 화면 시연</h3>
+<h3>✨ 서버 배포 및 화면 시연</h3>
 
 - 로컬에서 구현한 기능이 정상적으로 작동이 되는 것을 확인하고 이를 ubuntu를 이용하여 서버에 배포하였습니다.
 
 ---
 
-<h3>🥕 Trouble-Shooting</h3>
+<h1>✨ Trouble-Shooting</h1>
 
 - JavaScript에서 비동기 통신을 이용하여 view로 원하는 데이터를 넘길 때 다음과 같은 에러를 경험했습니다.
   - await fetch() 를 이용하여 url을 통해 view로 넘어갈 때 url을 찾지 못하는 Not Found 에러
