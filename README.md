@@ -187,7 +187,7 @@
 - JavaScript로 비동기통신 방식을 이용하기 위해 view 와 url을 작성하였습니다.
 - 앞선 JupyterNotebook으로 작성한 코드를 View에 모듈화하였습니다.
 
-**상세 설명**
+**✨상세 설명**
 
 - AIView
   - Post 방식으로 json 형태로 통신된 데이터를 data에 담아줍니다.
@@ -253,13 +253,12 @@
 
 <h1>✨ Trouble-Shooting ✨</h1>
 
-<h3>👉 JavaScript에서 비동기 통신을 이용하여 view로 원하는 데이터를 넘길 때 다음과 같은 에러를 경험했습니다.</h3>
+<h2>👉 JavaScript에서 비동기 통신을 이용하여 view로 원하는 데이터를 넘길 때 다음과 같은 에러를 경험했습니다.</h2>
 
 1. await fetch() 를 이용하여 url을 통해 view로 넘어갈 때 url을 찾지 못하는 Not Found 에러
 1. CSRF-Token을 찾지 못하여 Not Certificated Token 에러
 1. View로 넘어왔지만 같이 넘어온 데이터가 None 인 에러
 1. Django에서 비동기 방식으로 데이터를 불러오는 중 발생한 문제
-1. 서버 배포할 때, 로컬에서 작업한 작업물이 정상적으로 서버에 배포되지 않은 문제
 
    > 아래에서 하나씩 상세히 설명하겠습니다.
  
@@ -301,9 +300,41 @@
   </details>
 
 
-<h3>5. 서버 배포할 때, 로컬에서 작업한 작업물이 정상적으로 서버에 배포되지 않은 문제</h3>
+<h2>👉 서버 배포할 때, 로컬에서 작업한 작업물이 정상적으로 서버에 배포되지 않은 문제를 겪었습니다.</h2>
 
-- 사용자 환경개선까지
+<h3>✨해결 과정</h3>
+
+<h3>1. 서버에서 collectstatic 진행 중 서버가 멈추는 현상이 발생했습니다.</h3>
+
+  - 시도 : AWS에서 서버 재시작 후 'collectstatic' 다시 시도했으나, 서버가 여전히 멈췄습니다.
+  - 해결책 : Pycharm terminal에서 'collectstatic' 실행 후 GIT에 push하고 원격에서 pull을 진행했습니다.
+
+<h3>2. Merge 과정에서 충돌이 발생했습니다.</h3>
+
+  - 문제 : pull 진행 시 병합 충돌이 발생했습니다.
+  - 시도 : 'cd'와 'vim'으로 충돌 파일 수정하고, 다시 pull 진행했으나 여전히 충돌이 발생했습니다.
+  - 해결책 : 충돌 파일을 삭제 후 pull을 진행했습니다.
+    
+<h3>3. Rebase 문제 해결</h3>
+
+  - 문제 : 충돌 파일을 삭제 후 pull을 진행했으나 fatal-merge 에러가 발생했습니다.
+  - 검색 : GIT에서는 현재 merge를 진행중인 공간을 rebase라고 명명하는 것을 알게 되었습니다. 따라서 rebase를 삭제하고 다시 진행하기로 했습니다.
+  - 해결책 : <code>'rm -fr .git/rebase-merge</code> 명령어로 rebase 삭제 후 pull을 진행했습니다.
+    
+<h3>4. 삭제한 파일에서 문제 발견</h3>
+
+  - 문제 : rebase 삭제 후 pull을 진행했을 때 삭제한 파일이 pull 되지 않는 것을 알게 되었습니다.
+  - 검색 : GIT에는 로컬 브랜치와 원격 브랜치를 강제로 동기화하는 방법을 찾았습니다.
+  - 해결책 : <code>git fetch origin</code> <code>git reset --hard origin/master</code> 로 강제 동기화를 진행후 pull을 진행했습니다.
+    
+<h3>5. CSS 파일 문제</h3>
+
+  - 문제 : CSS 파일이 적용이 안되었음을 확인했습니다. <code>display : 'none'</code>로 설정된 div가 화면상으로 표시가 되고 있었습니다.
+  - 해결책 : 수정된 CSS 파일을 삭제하고 'collectstatic'을 다시 실행후 gunicorn과 nginx를 재시작해주어 해결하였습니다.
+    
+<h3>6. 최종 결과</h3>
+
+  - 성공 : 모든 기능이 정상 작동하고, JS 파일과 CSS 파일이 올바르게 반영되는 것을 확인하였습니다.
 
 ---
 
