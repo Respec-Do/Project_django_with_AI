@@ -204,7 +204,8 @@
   - community.objects.all을 통해 커뮤니티의 모든 내용을 가져옵니다.
   - 가져온 community를 make_dataframe 함수를 통해 df라는 데이터프레임으로 만들어줍니다.
   - Sklearn의 CountVectorizer()를 호출합니다.
-  - df 데이터프레임에 make_dataframe 함수를 통해 미리 만들어진 combined_features 를 CountVectorizer에 담아 Count_Matrix로 만들어줍니다.
+  - df 데이터프레임에 make_dataframe 함수를 통해 미리 만들어진 combined_features 를<br>
+    CountVectorizer에 담아 Count_Matrix로 만들어줍니다.
   - 앞서만든 하나의 문자열 (제목과 범주) 또한 CountVectorizer에 담아 title_vector_matrix로 만들어줍니다.
   - Sklearn의 Cosine_Similarity를 호출하여 데이터프레임으로 만들어진 Count_Matrix와 title_vector_matrix간의 유사도를 구합니다.
   - 구해진 유사도를 enumerate를 통해 index를 나타나게 하고, list에 담아 similar_community라는 변수에 할당합니다.
@@ -250,41 +251,53 @@
 
 ---
 
-<h1>✨ Trouble-Shooting</h1>
+<h1>✨ Trouble-Shooting ✨</h1>
 
-- JavaScript에서 비동기 통신을 이용하여 view로 원하는 데이터를 넘길 때 다음과 같은 에러를 경험했습니다.
-  - await fetch() 를 이용하여 url을 통해 view로 넘어갈 때 url을 찾지 못하는 Not Found 에러
-  - CSRF-Token을 찾지 못하여 Not Certificated Token 에러
-  - View로 넘어왔지만 같이 넘어온 데이터가 None 인 에러
-  - Django에서 비동기 방식으로 데이터를 불러오는 중 발생한 문제
+<h3>👉 JavaScript에서 비동기 통신을 이용하여 view로 원하는 데이터를 넘길 때 다음과 같은 에러를 경험했습니다.</h3>
+
+1. await fetch() 를 이용하여 url을 통해 view로 넘어갈 때 url을 찾지 못하는 Not Found 에러
+1. CSRF-Token을 찾지 못하여 Not Certificated Token 에러
+1. View로 넘어왔지만 같이 넘어온 데이터가 None 인 에러
+1. Django에서 비동기 방식으로 데이터를 불러오는 중 발생한 문제
+1. 서버 배포할 때, 로컬에서 작업한 작업물이 정상적으로 서버에 배포되지 않은 문제
  
-<h4>🥕 await fetch() 를 이용하여 url을 통해 view로 넘어갈 때 url을 찾지 못하는 Not Found 에러</h4>
+<h3>1. await fetch() 를 이용하여 url을 통해 view로 넘어갈 때 url을 찾지 못하는 Not Found 에러</h3>
 
 - url 경로를 제대로 설정해 주었는데도 불구하고 Not Found 에러가 나타났습니다.
 - 경로를 다시 추적을 해보니, Main url 파일에 새로이 만든 ai url을 추가하지 않아 못 찾는 것을 파악하고 추가해주었습니다.
 - 수정한 다음 다시 확인하니 View로 넘어가는 것을 파악했으나, CSRF-Token 에러가 나타났습니다.
 
-<h4>🥕 CSRF-Token을 찾지 못하여 Not Certificated Token 에러</h4>
+<h3>2. CSRF-Token을 찾지 못하여 Not Certificated Token 에러</h3>
 
 - View로 넘어간 것을 확인하고자 했으나 개발자 도구에서 Token과 관련된 에러가 나타나는 것을 확인했습니다.
 - HTML상 form태그안에 CSRF-Token 있었으나, 비동기 통신 방식으로 통신할 때 token이 포함되지 않는 것을 확인했습니다.
-- Javascript에서 CSRF-Token을 가져오는 함수를 만들어 직접 가져와서 csrftoken 이라는 변수에 할당하여 await fetch()에 headers에 담아주었습니다.
-- <details><summary>👉 코드 보기</summary>
+- Javascript에서 CSRF-Token을 가져오는 함수를 만들어 직접 가져와서 csrftoken 이라는 변수에 할당하여<br>
+  await fetch()에 headers에 담아주었습니다.
+- <details><summary> 코드 보기</summary>
+    <br>
     <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/c1fdb71c-52c4-4b26-b5c7-64e23991511f">
     <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/e27b21e2-2a27-4a1f-88a2-3c9686b99ae8">
   </details>
 
-<h4>🥕 View로 넘어왔지만 같이 넘어온 데이터가 None 인 에러</h4>
+<h3>3. View로 넘어왔지만 같이 넘어온 데이터가 None 인 에러</h3>
 
 - CSRF-Token 문제를 해결한 다음 다시 확인했으나, View를 통해 받아와 함수로 넘긴 데이터가 없다고 나타났습니다.
 - print를 하나씩 찍어보면서 확인한 결과, Javascript에서 비동기통신으로 받아온 데이터가 None으로 확인이 되었습니다.
-- 다시 Javascript로 넘어가서 문제를 확인했을 때, 데이터를 <code>body: JSON.stringify </code>의 형태로 담아서 전달했는데 View에서는 request.post로 데이터를 받아오고 있던 것이었습니다.
+- 다시 Javascript로 넘어가서 문제를 확인했을 때, 데이터를 <code>body: JSON.stringify </code>의 형태로 담아서 전달했는데<br>
+  View에서는 request.post로 데이터를 받아오고 있던 것이었습니다.
 - 이를 확인하여 다시 json.loads(requests.body)로 바꿔주고 다시 print하여 확인한 결과 정상적으로 원하는 데이터가 넘어오게 되었습니다.
 
-<h4>🥕 Django에서 비동기 방식으로 데이터를 불러오는 중 발생한 문제</h4>
+<h3>4. Django에서 비동기 방식으로 데이터를 불러오는 중 발생한 문제</h3>
 
-- 데이터를 불러오는 중, 화면이 빈 상태로 있는 문제가 발생하였습니다.
-- 이를 해결하기 위해 로딩을 의미하는 GIF를 화면상에 표기하는 로직을 추가하여 개선하였습니다.
+- 앞선 문제들을 하나씩 해결하고 난 다음 다시 화면을 검토하니 다음과 같은 문제가 있었습니다.
+- 데이터를 불러오는 중, 화면이 비어 있는 상태로 남아있는 것이었습니다.
+- 이는 사용자 입장에서 버튼을 눌렀을 때 로딩 중인 것인지 혹은 에러가 발생해서 멈춘 것인지 확인할 방법이 없다는 것을 깨달았습니다.
+- 이를 해결하기 위해 로딩을 의미하는 GIF 그림을 화면 상에 표기하는 로직을 추가하여 사용자 환경을 개선하였습니다.
+- <details><summary> 그림 보기</summary>
+    <br>
+    <img width="150" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/f070e52f-837e-4361-be71-e3a25359c2d7">
+  </details>
+
 
 ---
 
