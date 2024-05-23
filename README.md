@@ -254,7 +254,7 @@
 
 <h1>✨ Trouble-Shooting ✨</h1>
 
-<h2>👉 JavaScript에서 비동기 통신을 이용하여 view로 원하는 데이터를 넘길 때 다음과 같은 에러를 경험했습니다.</h2>
+<h2>👉 JavaScript와 View 간의 비동기 통신에서 생긴 Trouble</h2>
 
 1. await fetch() 를 이용하여 url을 통해 view로 넘어갈 때 url을 찾지 못하는 Not Found 에러
 1. CSRF-Token을 찾지 못하여 Not Certificated Token 에러
@@ -303,7 +303,7 @@
   </details>
 
 
-<h2>👉 서버 배포할 때, 로컬에서 작업한 작업물이 정상적으로 서버에 배포되지 않은 문제를 겪었습니다.</h2>
+<h2>👉 서버 배포에서 생긴 Trouble</h2>
 
 <h3>✨해결 과정</h3>
 
