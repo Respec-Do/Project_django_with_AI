@@ -21,7 +21,7 @@
 
 <h3>✨ 화면</h3>
 
-<details><summary>👉 AI 적용할 화면 확인</summary>
+<details><summary>AI 적용할 화면 확인</summary>
 <br>
 <img width="960" alt="슬라이드0001" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/ec8ebefc-c21b-44a0-9f9b-2c6922763cf9">  
 </details>
@@ -32,7 +32,7 @@
 
 <h3>✨ 데이터 수집(Data Crowling)</h3>
 
-<details><summary>👉 수집해야할 데이터 종류</summary>
+<details><summary>수집해야할 데이터 종류</summary>
 <br>
 <img width="400" alt="community_category" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/4dfdacfc-1585-4743-b101-d77f632e8cb0">  
 </details>
@@ -45,7 +45,7 @@
 
 - 위에 해당하는 내용은 데이터를 직접 작성하여 csv파일로 만들었습니다.
 
-<details><summary>👉 코드 확인</summary>
+<details><summary>코드 확인</summary>
 <br>
 <img width="960" alt="file_request_code" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/fe05e43a-e561-4b10-aa6c-f0a8206cd59d">
 <img width="960" alt="file_request_code2" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/eeec7bb2-42d1-46e9-9ff7-6e8f80a47dc6">
@@ -55,13 +55,13 @@
 
 - https://www.a-ha.io/
 
-<details><summary>👉 a-ha 페이지</summary>
+<details><summary>a-ha 페이지</summary>
 <br>
 <img width="960" alt="a-ha_page" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/c05a3592-1146-4d5a-82ac-e2bdf07d114b">
 </details>
 
 
-<details><summary>👉 코드 확인</summary>
+<details><summary>코드 확인</summary>
 <br>
 <img width="960" alt="question_code2" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/d06dfcf2-1f7c-4d4a-9c93-692dfbc2ee17">
 <img width="960" alt="question_code1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/6b042a46-ea8a-4405-896a-216f16772bd3">
@@ -71,13 +71,13 @@
 
 - https://news.naver.com/
 
-<details><summary>👉 네이버 뉴스 페이지</summary>
+<details><summary>네이버 뉴스 페이지</summary>
 <br>
 <img width="960" alt="naver_news" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/59c852c9-e175-4d6a-a128-e635b451c5be">
 </details>
 
 
-<details><summary>👉 코드 확인</summary>
+<details><summary>코드 확인</summary>
 <br>
 <img width="960" alt="etc_code" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/a851a9d2-2a6e-4f95-a26c-ff5bf4b9338d">
 <img width="960" alt="etc_code1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/d8f4a62e-6c78-434e-831f-de5b424c9c66">
@@ -96,7 +96,7 @@
 - enumerate를 이용하여 key값을 인덱스로 나타나게 하였습니다.
 - 이 인덱스를 토대로 get_title_from_index라는 함수를 만들어 제목을 가져오게 했습니다.
 
-<details><summary>👉 코드 확인</summary>
+<details><summary>코드 확인</summary>
 
 <br>
 
@@ -142,7 +142,7 @@
 - 내용을 수정하지 않으면 저장하기 버튼을 비활성화해서 내용을 수정하게끔 했습니다.
 - CSS 파일은 따로 표기하지 않았습니다.
 
-<details><summary>👉 화면 확인</summary>
+<details><summary>화면 확인</summary>
 <br>
 <img width="600" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/cf5feeb7-f4a6-4b2a-9e25-383797c16b8b">
 
@@ -161,7 +161,7 @@
 
 ---
 
-<details><summary>👉 코드 확인</summary>
+<details><summary>코드 확인</summary>
 <br>
   <img width="600" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/49600bc6-da17-489b-b752-7ec9cfef8474">
   <img width="600" alt="html2" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/35a37548-b074-4dd0-adac-999c431227df">
@@ -172,7 +172,7 @@
 - 내용 추천 버튼을 눌렀을 때 view로 보내기 위해 비동기 방식을 이용하여 JavaScript를 구성했습니다. 
 > 상세 설명은 주석을 통해 확인하실 수 있습니다.
 
-<details><summary>👉 코드 확인</summary>
+<details><summary>코드 확인</summary>
 <br>
   <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/eceb48bd-980d-4be0-8f83-ab598fa2c431">
   <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/f80d5beb-34e1-40ee-86e4-02a07ed9eb28">
@@ -191,7 +191,7 @@
   - 제목과 범주를 title과 radio_active 라는 변수에 할당합니다.
   - radio_active는 수치형이기에 translate_status 함수를 통해 범주이름으로 변경합니다.
   - 제목과 범주를 하나의 문자열로 만들어주고 get_similar_communities 함수를 호출합니다.
-  - <details><summary>👉 코드 보기</summary>
+  - <details><summary>코드 보기</summary>
     <img width="800" alt="html1" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/f341703e-905a-450c-9c10-416fa3a28638">
   </details>
 
