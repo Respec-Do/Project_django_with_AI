@@ -178,10 +178,11 @@
 
 - <details><summary> 코드 확인</summary>
     <br>
-    <img width="800" alt="jscode7" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/1eeeaa16-9e52-44c5-bf35-abb41d8cc138">
-    <img width="800" alt="jscode10" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/13b9bb04-c003-463d-9d42-b256ea53cfff">
-    <img width="800" alt="jscode9" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/04791ba7-8a78-4aab-b91c-6a88d950802c">
+    <img width="800" alt="jscode11" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/3b14cfb1-e4bc-42bc-9716-720d2e7962be">
+    <img width="800" alt="jscode12" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/985a9fb4-96a2-4eb9-8839-d9e99682b4a9">
+    <img width="800" alt="jscode13" src="https://github.com/Respec-Do/django_with_AI/assets/105579519/9ae6dd37-23b8-41f9-b43c-c202a60eabcf">
   </details>
+
 
 <h4>✨ Django</h4>
 
